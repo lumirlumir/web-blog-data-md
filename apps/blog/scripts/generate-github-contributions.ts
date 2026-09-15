@@ -64,7 +64,7 @@ const [start, end] = getMonthRange(year, month);
 
 urlGitHubSearchIssues.searchParams.set(
   'q',
-  `${type === 'issue' ? 'created' : 'merged'}:${start}..${end} author:lumirlumir -org:lumirlumir -org:eslint-markdown is:${type}`,
+  `${type === 'issue' ? 'created' : 'merged'}:${start}..${end} author:lumirlumir -org:lumirlumir -org:"eslint-markdown" is:${type}`,
 );
 urlGitHubSearchIssues.searchParams.set('per_page', '100');
 
