@@ -78,6 +78,12 @@ if (!res.ok) {
 
 const data = await res.json();
 
+if (data.incomplete_results) {
+  throw new Error(
+    'GitHub API returned incomplete search results. Please try again before overwriting contributions.',
+  );
+}
+
 if (data.total_count >= 100) {
   throw new Error('Too many results, please narrow down your search criteria.');
 }
